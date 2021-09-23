@@ -1,4 +1,14 @@
 import { createApp } from "vue"
-import App from "./App.vue"
+import "normalize.css"
 
-createApp(App).mount("#app")
+import App from "./App.vue"
+import router from "./router"
+import store, { setupStore } from "./store"
+import { registerApp } from "./global"
+import "./assets/css/index.less"
+
+const app = createApp(App)
+registerApp(app)
+app.use(router).use(store).mount("#app")
+// 加载localstorage到vuex
+setupStore()

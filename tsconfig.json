@@ -1,22 +1,37 @@
 {
+  // 编译选项
   "compilerOptions": {
+    // 目标代码：es6以后，因为这里是用babel转换，否则应该是es5
     "target": "esnext",
+    // 目标代码模块化，一般是umd：多种模块化
     "module": "esnext",
+    // 严格模式
     "strict": true,
+    // 是否对jsx处理：保留
     "jsx": "preserve",
+    // 辅助导入功能
     "importHelpers": true,
+    // 按照什么方式解析模块：node
     "moduleResolution": "node",
+    // 跳过第三方库的类型检测
     "skipLibCheck": true,
+    // es module与commonjs能不能混合使用
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    // sourcemap
     "sourceMap": true,
+    // 路径解析的基本
     "baseUrl": ".",
+    // 解析使用的类型
     "types": ["webpack-env"],
+    // 路径解析，配置别名
     "paths": {
       "@/*": ["src/*"]
     },
+    // 指定在项目中可以使用哪些库的类型
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
   },
+  // 哪些文件需要解析
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
@@ -24,5 +39,6 @@
     "tests/**/*.ts",
     "tests/**/*.tsx"
   ],
+  // 哪些文件不需要解析
   "exclude": ["node_modules"]
 }
