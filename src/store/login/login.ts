@@ -4,6 +4,7 @@ import { ILoginState } from "./types"
 import { IRootState } from "../types"
 
 import localCache from "@/utils/cache"
+import { mapMenusToRoutes } from "@/utils/map-menus"
 import router from "@/router"
 
 import {
@@ -32,6 +33,14 @@ const LoginModule: Module<ILoginState, IRootState> = {
     },
     changeUserMenus(state, userMenus: any) {
       state.userMenus = userMenus
+
+      // 使用动态路由
+      const routes = mapMenusToRoutes(userMenus)
+      routes.forEach((route) => {
+        // Add a new Route Record as the child of an existing route
+        // (method) Router.addRoute(parentName: RouteRecordName, route: RouteRecordRaw): () => void
+        router.addRoute("main", route)
+      })
     }
   },
   actions: {

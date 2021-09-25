@@ -37,7 +37,7 @@ class CFRequest {
           this.loading = ElLoading.service({
             lock: true,
             text: "正在请求...",
-            background: "rgba(255,255,255,0.5)"
+            background: "rgba(0,0,0,0.5)"
           })
         }
         return config

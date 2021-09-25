@@ -56,7 +56,7 @@ export default defineComponent({
     .el-input {
       width: 60%;
     }
-    /deep/ .el-form-item__content {
+    &:deep(.el-form-item__content) {
       display: flex;
       justify-content: space-between;
     }

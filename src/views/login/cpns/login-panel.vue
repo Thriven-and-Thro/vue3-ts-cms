@@ -17,7 +17,7 @@
     </el-tabs>
     <div class="tab-select">
       <el-checkbox v-model="isCheckKeep" label="记住密码"></el-checkbox>
-      <el-link type="primary">忘记密码？</el-link>
+      <el-link type="primary">忘记密码</el-link>
     </div>
     <div class="tab-commit">
       <el-button type="primary" @click="handleLoginClick">立即登录</el-button>
@@ -89,10 +89,10 @@ export default defineComponent({
     margin: 0 auto;
     width: 500px;
     height: fit-content;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(0, 0, 0, 0.6);
     box-shadow: 1px 1px 10px #555;
     border-radius: 20px;
-    /deep/ .el-tabs__item {
+    &:deep(.el-tabs__item) {
       height: 50px;
       line-height: 50px;
     }
@@ -103,6 +103,12 @@ export default defineComponent({
     padding: 0 20px;
     width: 500px;
     justify-content: space-between;
+    .el-link,
+    .el-link--primary {
+      &:hover {
+        color: #ffd04b;
+      }
+    }
   }
   .tab-commit {
     .el-button {
