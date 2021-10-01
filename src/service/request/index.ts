@@ -70,8 +70,8 @@ class CFRequest {
     )
   }
 
-  // 函数需要泛型
-  request<T>(config: CFRequestConfig<T>): Promise<T> {
+  // 函数需要泛型，默认为any，否则在不指定的情况下是unknown
+  request<T = any>(config: CFRequestConfig<T>): Promise<T> {
     return new Promise((resolve, reject) => {
       // 1.单个请求对请求config的处理
       if (config.interceptors?.requestInterceptor) {
@@ -107,19 +107,19 @@ class CFRequest {
     })
   }
 
-  get<T>(config: CFRequestConfig<T>): Promise<T> {
+  get<T = any>(config: CFRequestConfig<T>): Promise<T> {
     return this.request<T>({ ...config, method: "GET" })
   }
 
-  post<T>(config: CFRequestConfig<T>): Promise<T> {
+  post<T = any>(config: CFRequestConfig<T>): Promise<T> {
     return this.request<T>({ ...config, method: "POST" })
   }
 
-  delete<T>(config: CFRequestConfig<T>): Promise<T> {
+  delete<T = any>(config: CFRequestConfig<T>): Promise<T> {
     return this.request<T>({ ...config, method: "DELETE" })
   }
 
-  patch<T>(config: CFRequestConfig<T>): Promise<T> {
+  patch<T = any>(config: CFRequestConfig<T>): Promise<T> {
     return this.request<T>({ ...config, method: "PATCH" })
   }
 }

@@ -2,11 +2,12 @@ let BASE_URL = ""
 const TIME_OUT = 10000
 
 if (process.env.NODE_ENV === "development") {
+  // 配置了代理
   BASE_URL = "/api"
 } else if (process.env.NODE_ENV === "production") {
-  BASE_URL = "http://.../prod"
+  BASE_URL = "/api"
 } else {
-  BASE_URL = "http://.../test"
+  BASE_URL = "/api"
 }
 
 export { BASE_URL, TIME_OUT }

@@ -5,3 +5,7 @@ declare module "*.vue" {
   // 表示.vue文件导出的模块是一个对象
   export default component
 }
+
+declare let $store: any
+declare let $filters: any
+declare module "*.json"

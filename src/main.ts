@@ -9,6 +9,6 @@ import "./assets/css/index.less"
 
 const app = createApp(App)
 registerApp(app)
-app.use(router).use(store).mount("#app")
 // 加载localstorage到vuex
 setupStore()
+app.use(router).use(store).mount("#app")

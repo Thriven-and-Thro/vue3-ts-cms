@@ -4,7 +4,7 @@ import { ILoginState } from "./types"
 import { IRootState } from "../types"
 
 import localCache from "@/utils/cache"
-import { mapMenusToRoutes } from "@/utils/map-menus"
+import { mapMenusToPermissions, mapMenusToRoutes } from "@/utils/map-menus"
 import router from "@/router"
 
 import {
@@ -20,7 +20,8 @@ const LoginModule: Module<ILoginState, IRootState> = {
     return {
       token: "",
       userInfo: {},
-      userMenus: {}
+      userMenus: [],
+      permissions: []
     }
   },
   getters: {},
@@ -41,16 +42,23 @@ const LoginModule: Module<ILoginState, IRootState> = {
         // (method) Router.addRoute(parentName: RouteRecordName, route: RouteRecordRaw): () => void
         router.addRoute("main", route)
       })
+
+      // 获取该用户的操作权限
+      const permissions = mapMenusToPermissions(userMenus)
+      state.permissions = permissions
     }
   },
   actions: {
-    async accountLoginAction({ commit }, payload: any) {
+    async accountLoginAction({ commit, dispatch }, payload: any) {
       try {
         // 登录
         const loginResult = await accountLoginRequest(payload)
         const { id, token } = loginResult.data
         commit("changeToken", token)
         localCache.setCache("token", token)
+
+        // 获取部门、角色信息
+        dispatch("getInitialDataAction", null, { root: true })
 
         // 请求用户信息
         const userInfoResult = await requestUserInfoById(id)

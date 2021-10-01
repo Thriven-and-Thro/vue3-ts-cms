@@ -9,9 +9,10 @@
           <nav-header @fold-change="handleFoldChange" />
         </el-header>
         <el-main>
-          <router-view></router-view>
+          <div class="main-main-bg">
+            <router-view></router-view>
+          </div>
         </el-main>
-        <el-footer>Footer</el-footer>
       </el-container>
     </el-container>
   </div>

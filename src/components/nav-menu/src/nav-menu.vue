@@ -8,7 +8,7 @@
     <el-menu
       active-text-color="#ffd04b"
       background-color="rgba(0, 0, 0, 0)"
-      default-active="1"
+      :default-active="defaultValue"
       :unique-opened="true"
       text-color="rgba(255, 255,255, 0.7)"
       :collapse="collapse"
@@ -48,9 +48,11 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from "vue"
+import { computed, defineComponent, ref } from "vue"
 import { useStore } from "@/store"
-import { useRouter } from "vue-router"
+import { useRoute, useRouter } from "vue-router"
+
+import { pathMapToMenu } from "@/utils/map-menus"
 
 export default defineComponent({
   name: "NavMenu",
@@ -61,18 +63,28 @@ export default defineComponent({
     }
   },
   setup() {
+    // 获取userMenus
     const store = useStore()
     const userMenus = computed(() => store.state.login.userMenus)
 
+    // 路由跳转
     const router = useRouter()
     const handleMenuItemClick = (item: any) => {
       router.push({
         path: item.url ?? "/not-found"
       })
     }
+
+    // 保存当前路径为nav-menu默认路径
+    const route = useRoute()
+    const currentPath = route.path
+    const menu = pathMapToMenu(userMenus.value, currentPath)
+    const defaultValue = ref(menu.id + "")
+
     return {
       userMenus,
-      handleMenuItemClick
+      handleMenuItemClick,
+      defaultValue
     }
   }
 })

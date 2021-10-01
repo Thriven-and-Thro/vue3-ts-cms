@@ -4,6 +4,7 @@ import { createRouter, createWebHashHistory } from "vue-router"
 import type { RouteRecordRaw } from "vue-router"
 
 import localCache from "@/utils/cache"
+import { firstMenu } from "@/utils/map-menus"
 
 // 使用路由类型注解的数组
 const routes: RouteRecordRaw[] = [
@@ -35,11 +36,18 @@ const router = createRouter({
 })
 
 router.beforeEach((to) => {
+  // 是否登录
   if (to.path !== "/login") {
     const token = localCache.getCache("token")
     if (!token) {
+      // return 跳转
       return "/login"
     }
+  }
+
+  // /main默认到第一个路由
+  if (to.path === "/main") {
+    return firstMenu.url
   }
 })
 

@@ -47,7 +47,7 @@ export default defineComponent({
     // defineComponent包裹的普通对象：组件的描述 =》 类：拥有构造函数的实例
     // typeof LoginAccount：获取普通对象的类型
     // InstanceType<typeof LoginAccount>：获得拥有构造函数的实例 = 类
-    // <InstanceType<typeof Person>> = Person
+    // <InstanceType<typeof Person>> === Person
     const accountRef = ref<InstanceType<typeof LoginAccount>>()
     const phoneRef = ref<InstanceType<typeof LoginPhone>>()
     const handleLoginClick = () => {

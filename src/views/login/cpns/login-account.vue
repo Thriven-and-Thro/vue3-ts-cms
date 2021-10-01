@@ -65,6 +65,7 @@ export default defineComponent({
         password: ruleForm.pass
       })
     }
+
     return {
       ruleForm,
       ruleAccount,
