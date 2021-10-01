@@ -41,7 +41,8 @@ export default defineComponent({
     PageContent
   },
   setup() {
-    const [pageContentRef, handleResetClick, handleQueryClick] = usePageSearch()
+    const [pageContentRef, handleResetClick, handleQueryClick]: any =
+      usePageSearch()
     return {
       searchConfig,
       contentConfig,

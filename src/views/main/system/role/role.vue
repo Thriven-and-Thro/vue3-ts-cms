@@ -82,9 +82,10 @@ export default defineComponent({
       })
     }
 
-    const [pageContentRef, handleResetClick, handleQueryClick] = usePageSearch()
+    const [pageContentRef, handleResetClick, handleQueryClick]: any[] =
+      usePageSearch()
     // 传入回调函数获得参数
-    const [pageModalRef, defaultInfo, handleNewData, handleEditData] =
+    const [pageModalRef, defaultInfo, handleNewData, handleEditData]: any[] =
       usePageModal(undefined, editCallback)
 
     return {

@@ -44,7 +44,8 @@ export default defineComponent({
     PageModal
   },
   setup() {
-    const [pageContentRef, handleResetClick, handleQueryClick] = usePageSearch()
+    const [pageContentRef, handleResetClick, handleQueryClick]: any =
+      usePageSearch()
 
     // 隐藏函数
     // 根据按钮不同修改弹窗对应输入框是否隐藏
@@ -61,7 +62,7 @@ export default defineComponent({
       )
       passwordItem!.isHidden = true
     }
-    const [pageModalRef, defaultInfo, handleNewData, handleEditData] =
+    const [pageModalRef, defaultInfo, handleNewData, handleEditData]: any =
       usePageModal(newCallback, editCallback)
 
     const store = useStore()
