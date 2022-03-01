@@ -1,6 +1,7 @@
 module.exports = {
   plugins: [
     [
+      // 每次从element-plus import时，import上对应的css
       "import",
       {
         libraryName: "element-plus",

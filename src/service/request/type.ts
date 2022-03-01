@@ -14,3 +14,8 @@ export interface CFRequestConfig<T = AxiosResponse> extends AxiosRequestConfig {
   interceptors?: CFRequestInterceptors<T>
   showLoading?: boolean
 }
+
+// 盲点：
+// 1.没有设置非必传
+// 2.命名不规范
+// 3.CFRequestConfig的interceptors没有传入泛型，没有继承AxiosRequestConfig

@@ -11,3 +11,6 @@ if (process.env.NODE_ENV === "development") {
 }
 
 export { BASE_URL, TIME_OUT }
+
+// 盲点：
+// 1.process.env.NODE_ENV不会拼

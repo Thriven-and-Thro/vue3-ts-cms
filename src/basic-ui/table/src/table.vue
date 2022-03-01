@@ -37,13 +37,11 @@
       </el-table-column>
       <template v-for="item in propList" :key="item.prop">
         <el-table-column v-bind="item" align="center" show-overflow-tooltip>
-          <!-- 使用作用域插槽，通过子组件传递的scope.row可以获取到本行的数据 -->
+          <!-- 使用el-table-column的作用域插槽，通过scope.row可以获取到本行的数据 -->
           <template #default="scope">
-            <!-- 这里再使用作用域插槽是因为不同组件可能需要对数据进行不同的处理 -->
-            <!-- 使用动态插槽名，因为可能有多列需要插槽 -->
-            <!-- 使用作用域插槽，传递scope.row给父组件 -->
+            <!-- 使用作用域插槽，传递数据给父组件 -->
+            <!-- 这个组件接受的配置信息通过这里向 PageContent 中插入内容 -->
             <slot :name="item.slotName" :row="scope.row">
-              <!-- 插槽的默认值 -->
               {{ scope.row[item.prop] }}
             </slot>
           </template>

@@ -10,6 +10,7 @@ const cfRequest = new CFRequest({
       // 携带token
       const token = localCache.getCache("token")
       if (token) {
+        // 设置token
         config.headers.Authorization = `Bearer ${token}`
       }
       return config

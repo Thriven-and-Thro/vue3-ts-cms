@@ -1,5 +1,6 @@
 <template>
   <div class="page-content">
+    <!-- 使用自定义组件 CfTable -->
     <cf-table
       :tableData="dataList"
       v-bind="contentTableConfig"
@@ -18,6 +19,11 @@
       </template>
 
       <!-- 普通作用域插槽 -->
+      <!--
+        在 CfTable 中插入一些通用的内容（使用 CfTable 提供的作用域插槽），
+        使用 v-if 和配置信息控制是否显示。
+        配置信息直接传入 CfTable，插入的内容中通过作用域插槽 scope 获得数据
+      -->
       <template #status="scope">
         <el-button
           plain
@@ -54,6 +60,7 @@
         </div>
       </template>
 
+      <!-- 再提供一个作用域插槽，使用者可以通过配置信息和作用域插槽插入额外的内容 -->
       <!-- 循环遍历出动态作用域插槽 -->
       <!-- 这里的作用域插槽是插入el-table中的 -->
       <template
