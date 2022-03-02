@@ -5,7 +5,7 @@ if (process.env.NODE_ENV === "development") {
   // 配置了代理
   BASE_URL = "/api"
 } else if (process.env.NODE_ENV === "production") {
-  BASE_URL = "/api"
+  BASE_URL = ""
 } else {
   BASE_URL = "/api"
 }
