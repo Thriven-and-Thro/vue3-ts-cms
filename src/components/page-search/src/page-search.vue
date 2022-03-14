@@ -65,6 +65,11 @@ export default defineComponent({
 </script>
 
 <style scoped lang="less">
+.page-search {
+  padding-right: 30px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
 .handle-btns {
   flex: 1;
   margin-bottom: 20px;

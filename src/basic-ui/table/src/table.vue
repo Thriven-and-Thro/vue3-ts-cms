@@ -135,7 +135,7 @@ export default defineComponent({
 <style scoped lang="less">
 .cf-table {
   margin-top: 20px;
-  padding: 0 20px;
+  padding: 0 10px;
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 10px;
   .header {

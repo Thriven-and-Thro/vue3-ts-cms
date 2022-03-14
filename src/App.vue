@@ -36,18 +36,19 @@ export default defineComponent({
   height: 100%;
   .bg {
     position: absolute;
-    width: 100%;
+    width: 100vw;
     height: 100%;
-    min-width: 1630px;
-    background: url("./assets/img/wallhaven-x8p813.jpg") no-repeat;
+    min-width: 1170px;
+    background: url("./assets/img/wallhaven-1.png") no-repeat;
     background-size: cover;
     opacity: 0.7;
-    filter: blur(5px);
+    filter: blur(2px);
     z-index: -999;
   }
   .contain {
     margin: 0 auto;
-    width: 1630px;
+    width: 100vw;
+    min-width: 1170px;
     height: 100%;
   }
 }

@@ -1,18 +1,11 @@
 <template>
   <div class="category">
-    <h2>category</h2>
+    <development-notice></development-notice>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue"
-
-export default defineComponent({
-  name: "category",
-  setup() {
-    return {}
-  }
-})
+<script lang="ts" setup>
+import { DevelopmentNotice } from "@/components/development-notice"
 </script>
 
 <style scoped></style>

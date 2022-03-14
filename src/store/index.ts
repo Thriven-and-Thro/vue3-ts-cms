@@ -60,7 +60,6 @@ const store = createStore<IRootState>({
 export function setupStore() {
   // 注意加上login模块
   store.dispatch("login/loadLocalLogin")
-  store.dispatch("getInitialDataAction")
 }
 
 // 重写useStore方法，弥补vuex中useStore没有类型

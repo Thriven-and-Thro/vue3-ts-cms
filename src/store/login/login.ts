@@ -1,4 +1,5 @@
 import { Module } from "vuex"
+import { ElMessage } from "element-plus/lib/components"
 
 import { ILoginState } from "./types"
 import { IRootState } from "../types"
@@ -38,7 +39,6 @@ const LoginModule: Module<ILoginState, IRootState> = {
       // 使用动态路由
       const routes = mapMenusToRoutes(userMenus)
       routes.forEach((route) => {
-        // Add a new Route Record as the child of an existing route
         // (method) Router.addRoute(parentName: RouteRecordName, route: RouteRecordRaw): () => void
         router.addRoute("main", route)
       })
@@ -75,7 +75,7 @@ const LoginModule: Module<ILoginState, IRootState> = {
         // 跳转至首页
         router.push("./main")
       } catch {
-        console.log("账号或密码错误")
+        ElMessage.error("账号或密码错误")
       }
     },
     // 加载localstorage到vuex
@@ -85,11 +85,11 @@ const LoginModule: Module<ILoginState, IRootState> = {
         commit("changeToken", token)
       }
       const userInfo = localCache.getCache("userInfo")
-      if (token) {
+      if (userInfo) {
         commit("changeUserInfo", userInfo)
       }
       const userMenus = localCache.getCache("userMenus")
-      if (token) {
+      if (userMenus) {
         commit("changeUserMenus", userMenus)
       }
     }

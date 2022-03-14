@@ -97,6 +97,6 @@ export default defineComponent({
 
 <style scoped lang="less">
 .content-row {
-  margin-top: 10px;
+  padding-top: 10px;
 }
 </style>

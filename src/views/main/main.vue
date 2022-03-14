@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <el-container class="main-container">
-      <el-aside :width="isCollapse ? '64px' : '250px'">
+      <el-aside :width="isCollapse ? '64px' : '200px'">
         <nav-menu :collapse="isCollapse" />
       </el-aside>
       <el-container class="right-container">

@@ -1,18 +1,9 @@
 <template>
-  <div class="list">
-    <h2>list</h2>
+  <div class="overview">
+    <development-notice></development-notice>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue"
-
-export default defineComponent({
-  name: "list",
-  setup() {
-    return {}
-  }
-})
+<script setup lang="ts">
+import { DevelopmentNotice } from "@/components/development-notice"
 </script>
-
-<style scoped></style>

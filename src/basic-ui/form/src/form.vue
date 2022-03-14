@@ -95,7 +95,7 @@ export default defineComponent({
     },
     itemStyle: {
       type: Object,
-      default: () => ({ padding: "0 40px" })
+      default: () => ({ padding: "0 0" })
     },
     isHidden: {
       type: Boolean,
@@ -131,7 +131,6 @@ export default defineComponent({
 <style scoped lang="less">
 .cf-form {
   padding-top: 20px;
-  background-color: rgba(0, 0, 0, 0.6);
   border-radius: 10px;
 }
 </style>
