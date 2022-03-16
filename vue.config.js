@@ -4,6 +4,8 @@ module.exports = {
   // 方式一
   outputDir: "./build",
   devServer: {
+    // griz压缩
+    compress: true,
     proxy: {
       "^/api": {
         target: "http://152.136.185.210:5000",
