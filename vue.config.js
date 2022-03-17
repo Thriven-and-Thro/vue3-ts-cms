@@ -1,11 +1,10 @@
 const path = require("path")
+const CompressionWebpackPlugin = require("compression-webpack-plugin")
 
 module.exports = {
   // 方式一
   outputDir: "./build",
   devServer: {
-    // griz压缩
-    compress: true,
     proxy: {
       "^/api": {
         target: "http://152.136.185.210:5000",
@@ -24,7 +23,15 @@ module.exports = {
         "@": path.resolve(__dirname, "src"),
         components: "@/components"
       }
-    }
+    },
+    plugins: [
+      new CompressionWebpackPlugin({
+        algorithm: "gzip",
+        threshold: 8192,
+        minRatio: 0.8,
+        deleteOriginalAssets: false
+      })
+    ]
   }
   // configureWebpack: (config) => {
   //   config.resolve.alias = {

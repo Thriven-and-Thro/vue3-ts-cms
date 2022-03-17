@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps, computed, ref } from "vue"
+import { defineProps, computed } from "vue"
 import { CfEchart } from "@/basic-ui/echart"
 import { IDataType } from "./type"
 
