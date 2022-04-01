@@ -39,9 +39,9 @@ export default defineComponent({
     width: 100vw;
     height: 100%;
     min-width: 1170px;
-    background: url("./assets/img/wallhaven-1.png") no-repeat;
+    background: url("~@/assets/img/wallpaper.png") no-repeat;
     background-size: cover;
-    opacity: 0.7;
+    opacity: 0.8;
     filter: blur(2px);
     z-index: -999;
   }

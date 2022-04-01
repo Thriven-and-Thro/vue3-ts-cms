@@ -14,7 +14,7 @@
           size="medium"
           @click="handleNewClick"
         >
-          新建用户
+          <slot name="name">新建用户</slot>
         </el-button>
       </template>
 
@@ -24,7 +24,7 @@
         使用 v-if 和配置信息控制是否显示。
         配置信息直接传入 CfTable，插入的内容中通过作用域插槽 scope 获得数据
       -->
-      <template #status="scope">
+      <!-- <template #status="scope">
         <el-button
           plain
           size="mini"
@@ -32,7 +32,7 @@
         >
           {{ scope.row.enable ? "启用" : "禁用" }}
         </el-button>
-      </template>
+      </template> -->
       <template #createAt="scope">
         <span>{{ $filters.formatTime(scope.row.createAt) }}</span>
       </template>

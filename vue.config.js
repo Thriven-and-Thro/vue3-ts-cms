@@ -3,7 +3,6 @@ const CompressionWebpackPlugin = require("compression-webpack-plugin")
 
 module.exports = {
   // 方式一
-  outputDir: "./build",
   devServer: {
     proxy: {
       "^/api": {
@@ -24,6 +23,7 @@ module.exports = {
         components: "@/components"
       }
     },
+
     plugins: [
       new CompressionWebpackPlugin({
         algorithm: "gzip",

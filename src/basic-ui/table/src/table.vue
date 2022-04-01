@@ -26,6 +26,7 @@
         width="60"
       >
       </el-table-column>
+      -->
       <!-- 是否添加序号 -->
       <el-table-column
         v-if="showIndexColumn"
@@ -55,7 +56,7 @@
         <el-pagination
           v-model:currentPage="currentPage"
           :page-sizes="[5, 10, 15]"
-          :page-size="page.pageSize"
+          v-model:page-size="pageSize"
           layout="total, sizes, prev, pager, next, jumper"
           :total="tableCount"
           @size-change="handleSizeChange"
@@ -115,6 +116,7 @@ export default defineComponent({
 
     // 分页器
     const currentPage = ref(1)
+    const pageSize = ref(10)
     const handleCurrentChange = (currentPage: number) => {
       emit("update:page", { ...props.page, currentPage })
     }
@@ -125,6 +127,7 @@ export default defineComponent({
     return {
       handleSelectionChange,
       currentPage,
+      pageSize,
       handleCurrentChange,
       handleSizeChange
     }

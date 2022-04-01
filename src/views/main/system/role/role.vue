@@ -11,7 +11,9 @@
       ref="pageContentRef"
       @newBtnClick="handleNewData"
       @editBtnClick="handleEditData"
-    ></PageContent>
+    >
+      <template v-slot:name>新建角色</template>
+    </PageContent>
     <PageModal
       :defaultInfo="defaultInfo"
       ref="pageModalRef"
@@ -64,7 +66,7 @@ export default defineComponent({
       return store.state.entireMenu
     })
 
-    // 船队选择的权限
+    // 获得选择的权限
     const otherInfo = ref({})
     const handleCheckChange = (data1: any, data2: any) => {
       const checkedKeys = data2.checkedKeys

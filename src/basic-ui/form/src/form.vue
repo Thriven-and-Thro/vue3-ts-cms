@@ -48,14 +48,15 @@
                   style="width: 100%"
                   :model-value="modelValue?.[`${item.field}`]"
                   @update:modelValue="handleValueChange($event, item.field)"
+                  value-format="YYYY-MM-DD"
                 >
                 </el-date-picker>
               </template>
             </el-form-item>
           </el-col>
         </template>
-        <slot name="footer"></slot>
       </el-row>
+      <slot name="footer"></slot>
     </el-form>
   </div>
 </template>

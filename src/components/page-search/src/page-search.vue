@@ -72,7 +72,7 @@ export default defineComponent({
 }
 .handle-btns {
   flex: 1;
-  margin-bottom: 20px;
+  padding-bottom: 20px;
   text-align: center;
 }
 </style>

@@ -9,3 +9,6 @@ declare module "*.vue" {
 declare let $store: any
 declare let $filters: any
 declare module "*.json"
+declare module "*.js"
+declare module "marked"
+declare module "*.md"

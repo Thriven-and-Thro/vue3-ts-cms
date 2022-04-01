@@ -70,6 +70,13 @@ const systemModule: Module<ISystemState, IRootState> = {
       const pageName = payload.pageName
       const pageUrl = `/${pageName}/list`
 
+      // 解决element-plus日期选择器为一个数组
+      if ("createAt" in payload.queryInfo) {
+        payload.queryInfo.updateAt = payload.queryInfo.createAt[1]
+        payload.queryInfo.createAt = payload.queryInfo.createAt[0]
+      }
+      console.log(payload.queryInfo)
+
       // 请求
       const pageResult = await getPageListData(pageUrl, payload.queryInfo)
       const { list, totalCount } = pageResult.data
