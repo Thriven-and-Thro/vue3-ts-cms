@@ -46,6 +46,7 @@ const store = createStore<IRootState>({
         size: 1000
       })
       const { list: menuList } = menuResult.data
+
       commit("changeEntireMenu", menuList)
     }
   },
@@ -60,6 +61,7 @@ const store = createStore<IRootState>({
 export function setupStore() {
   // 注意加上login模块
   store.dispatch("login/loadLocalLogin")
+  store.dispatch("getInitialDataAction")
 }
 
 // 重写useStore方法，弥补vuex中useStore没有类型

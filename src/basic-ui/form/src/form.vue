@@ -42,6 +42,7 @@
                   </el-option>
                 </el-select>
               </template>
+              <!-- 因后端接口的原因，暂时不能使用时间选择器 -->
               <template v-else-if="item.type === 'datepicker'">
                 <el-date-picker
                   v-bind="item.otherOptions"

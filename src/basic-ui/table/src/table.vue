@@ -61,6 +61,7 @@
           :total="tableCount"
           @size-change="handleSizeChange"
           @current-change="handleCurrentChange"
+          v-if="showFooter"
         >
         </el-pagination>
       </slot>
@@ -84,7 +85,8 @@ export default defineComponent({
     },
     tableCount: {
       type: Number,
-      required: true
+      required: true,
+      default: 0
     },
     propList: {
       type: Array as PropType<any[]>
@@ -96,6 +98,10 @@ export default defineComponent({
     showIndexColumn: {
       type: Boolean,
       default: false
+    },
+    showFooter: {
+      type: Boolean,
+      default: true
     },
     // 分页器数据
     page: {

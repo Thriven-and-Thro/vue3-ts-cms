@@ -75,7 +75,6 @@ const systemModule: Module<ISystemState, IRootState> = {
         payload.queryInfo.updateAt = payload.queryInfo.createAt[1]
         payload.queryInfo.createAt = payload.queryInfo.createAt[0]
       }
-      console.log(payload.queryInfo)
 
       // 请求
       const pageResult = await getPageListData(pageUrl, payload.queryInfo)
