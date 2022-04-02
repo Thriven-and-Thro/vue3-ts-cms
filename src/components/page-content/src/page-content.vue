@@ -104,7 +104,11 @@ export default defineComponent({
     const store = useStore()
 
     // 获取操作的权限
-    const isCreate = usePermission(props.pageName, "create")
+    // 因goods的接口不能添加商品，故将其总是置为false
+    const isCreate =
+      props.pageName === "goods"
+        ? false
+        : usePermission(props.pageName, "create")
     const isUpdate = usePermission(props.pageName, "update")
     const isDelete = usePermission(props.pageName, "delete")
     const isQuery = usePermission(props.pageName, "query")

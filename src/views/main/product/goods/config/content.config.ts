@@ -1,7 +1,7 @@
 const contentTableConfig = {
   title: "商品列表",
   propList: [
-    { prop: "name", label: "商品名称", minWidth: "180" },
+    { prop: "name", label: "商品名称", minWidth: "250" },
     { prop: "oldPrice", label: "原价格", minWidth: "60", slotName: "oldPrice" },
     { prop: "newPrice", label: "现价格", minWidth: "60", slotName: "newPrice" },
     { prop: "imgUrl", label: "商品图片", minWidth: "100", slotName: "image" },
@@ -16,8 +16,7 @@ const contentTableConfig = {
       label: "更新时间",
       minWidth: "160",
       slotName: "updateAt"
-    },
-    { label: "操作", minWidth: "120", slotName: "handler" }
+    }
   ],
   showIndexColumn: true,
   showSelectColumn: false
