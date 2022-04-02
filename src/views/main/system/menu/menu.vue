@@ -20,12 +20,12 @@
 </template>
 
 <script setup lang="ts">
-import { PageContent } from "@/components/page-content"
-import { PageModal } from "@/components/page-modal"
-
-import { usePageModal } from "@/hooks/use-page-modal"
 import { computed } from "vue"
 import { useStore } from "vuex"
+
+import { PageContent } from "@/components/page-content"
+import { PageModal } from "@/components/page-modal"
+import { usePageModal } from "@/hooks/use-page-modal"
 
 import contentConfig from "./config/content.config"
 import modalConfig from "./config/modal.config"
