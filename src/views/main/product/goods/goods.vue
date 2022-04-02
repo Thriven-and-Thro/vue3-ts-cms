@@ -5,6 +5,7 @@
       pageName="goods"
       ref="pageContentRef"
     >
+      <template v-slot:name>新建商品</template>
       <template #oldPrice="scope">
         {{ "￥" + scope.row.oldPrice }}
       </template>
