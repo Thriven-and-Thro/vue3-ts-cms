@@ -17,6 +17,7 @@
       ref="pageModalRef"
       pageName="users"
       :modalConfig="modalConfigRef"
+      title="新建用户"
     >
     </page-modal>
   </div>
@@ -47,7 +48,6 @@ export default defineComponent({
     const [pageContentRef, handleResetClick, handleQueryClick]: any =
       usePageSearch()
 
-    // 隐藏函数
     // 根据按钮不同修改弹窗对应输入框是否隐藏
     const newCallback = () => {
       const passwordItem = modalConfig.formItems.find(

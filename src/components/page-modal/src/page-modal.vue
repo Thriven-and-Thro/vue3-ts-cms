@@ -1,6 +1,6 @@
 <template>
   <div class="page-modal">
-    <el-dialog title="新建用户" v-model="dialogVisible" width="30%" center>
+    <el-dialog :title="title" v-model="dialogVisible" width="30%" center>
       <cf-form v-bind="modalConfig" v-model="formData"></cf-form>
       <template #footer>
         <span class="dialog-footer">
@@ -25,6 +25,10 @@ export default defineComponent({
     CfForm
   },
   props: {
+    title: {
+      type: String,
+      require: true
+    },
     modalConfig: {
       type: Object,
       require: true

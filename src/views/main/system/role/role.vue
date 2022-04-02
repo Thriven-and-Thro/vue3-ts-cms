@@ -20,6 +20,7 @@
       pageName="role"
       :modalConfig="modalConfig"
       :otherInfo="otherInfo"
+      title="新建角色"
     >
       <div class="menu-tree">
         <el-tree

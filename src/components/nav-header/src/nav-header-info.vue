@@ -15,8 +15,6 @@
             @click="handleExitClick"
             >退出登录</el-dropdown-item
           >
-          <el-dropdown-item icon="el-icon-document">用户信息</el-dropdown-item>
-          <el-dropdown-item icon="el-icon-more">系统管理</el-dropdown-item>
         </el-dropdown-menu>
       </template>
     </el-dropdown>

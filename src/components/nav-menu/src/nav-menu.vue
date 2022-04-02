@@ -65,7 +65,10 @@ export default defineComponent({
   setup() {
     // 获取userMenus
     const store = useStore()
-    const userMenus = computed(() => store.state.login.userMenus)
+    // 除去“随便聊聊”
+    const userMenus = computed(() =>
+      store.state.login.userMenus.filter((v: { id: number }) => v.id !== 41)
+    )
 
     // 路由跳转
     const router = useRouter()
