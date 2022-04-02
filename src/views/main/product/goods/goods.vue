@@ -1,24 +1,22 @@
 <template>
   <div class="goods">
-    <page-search
-      :searchFormConfig="searchConfig"
-      @resetBtnClick="handleResetClick"
-      @searchBtnClick="handleQueryClick"
-    />
     <page-content
       :contentTableConfig="contentConfig"
       pageName="goods"
       ref="pageContentRef"
     >
+      <template #oldPrice="scope">
+        {{ "￥" + scope.row.oldPrice }}
+      </template>
+      <template #newPrice="scope">
+        <del>{{ "￥" + scope.row.newPrice }}</del>
+      </template>
       <template #image="scope">
         <el-image
           style="width: 60px; height: 60px"
           :src="scope.row.imgUrl"
           :preview-src-list="[scope.row.imgUrl]"
         ></el-image>
-      </template>
-      <template #oldPrice="scope">
-        {{ "￥" + scope.row.oldPrice }}
       </template>
     </page-content>
   </div>
@@ -27,28 +25,18 @@
 <script lang="ts">
 import { defineComponent } from "vue"
 
-import PageSearch from "@/components/page-search/src/page-search.vue"
 import PageContent from "@/components/page-content/src/page-content.vue"
 
-import searchConfig from "./config/search.config"
 import contentConfig from "./config/content.config"
-import { usePageSearch } from "@/hooks/use-page-search"
 
 export default defineComponent({
   name: "goods",
   components: {
-    PageSearch,
     PageContent
   },
   setup() {
-    const [pageContentRef, handleResetClick, handleQueryClick]: any =
-      usePageSearch()
     return {
-      searchConfig,
-      contentConfig,
-      pageContentRef,
-      handleResetClick,
-      handleQueryClick
+      contentConfig
     }
   }
 })
