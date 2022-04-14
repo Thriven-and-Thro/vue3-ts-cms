@@ -1,5 +1,5 @@
 {
-  // 编译选项
+  // 编译选项:配置对ts的编译
   "compilerOptions": {
     // 目标代码：es6以后，因为这里是用babel转换，否则应该是es5
     "target": "esnext",
@@ -25,6 +25,7 @@
     // 解析使用的类型
     "types": ["webpack-env"],
     // 路径解析，配置别名
+    // 但是webpack会将其覆盖，但此处在vscode中会有路径提示
     "paths": {
       "@/*": ["src/*"],
       "components/*": ["src/components/*"]
