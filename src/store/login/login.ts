@@ -38,6 +38,8 @@ const LoginModule: Module<ILoginState, IRootState> = {
 
       // 使用动态路由
       const routes = mapMenusToRoutes(userMenus)
+      // {path: '/main/analysis/overview', name: 'overview', children: Array(0), component: ƒ}
+
       routes.forEach((route) => {
         // (method) Router.addRoute(parentName: RouteRecordName, route: RouteRecordRaw): () => void
         router.addRoute("main", route)

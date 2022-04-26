@@ -16,6 +16,7 @@ export function mapMenusToRoutes(userMenus: any[]): RouteRecordRaw[] {
   const routeFiles = require.context("../router/main", true, /\.ts/)
   routeFiles.keys().forEach((key) => {
     const route = require("../router/main" + key.split(".")[1])
+    // {path: '/main/analysis/overview', name: 'overview', children: Array(0), component: ƒ}
     allRoutes.push(route.default)
   })
 
@@ -37,6 +38,7 @@ export function mapMenusToRoutes(userMenus: any[]): RouteRecordRaw[] {
     }
   }
 
+  // {id: 38, name: '系统总览', type: 1, url: '/main/analysis', icon: 'el-icon-monitor', …}
   _recurseGetRoute(userMenus)
   return routes
 }
